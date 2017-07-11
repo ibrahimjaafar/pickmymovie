@@ -1,0 +1,13 @@
+
+{
+  "name"         : "Random Movie Scraper",
+  "version"      : "0.0.1",
+  "description"  : "Random Movie",
+  "main"         : "app.js",
+  "author"       : "Ibrahim",
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+  }
+}
