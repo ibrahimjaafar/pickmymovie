@@ -7,7 +7,7 @@ var app     = express();
 app.get('/scrape', function(req, res){
   var currentIndex = 1;
   var genre = "action";
-  var randPage = Math.floor(Math.random() * 49) + 1  ;
+  var randPage = Math.floor(Math.random() * 50) + 1  ;
   url = 'http://www.imdb.com/search/title?genres='+genre+'&title_type=feature&sort=moviemeter,asc&page='+randPage+'&ref_=adv_nxt';
   request(url, function(error, response, html){
     if(!error){
