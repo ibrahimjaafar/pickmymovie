@@ -3,10 +3,12 @@ var fs      = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
-
+ app.get("/", function (request, response){
+     response.sendFile(__dirname+"/views/index.html");
+ });
 app.get('/scrape', function(req, res){
   var currentIndex = 1;
-  var genre = "action";
+  var genre = req.query.gen;
   var randPage = Math.floor(Math.random() * 50) + 1  ;
   url = 'http://www.imdb.com/search/title?genres='+genre+'&title_type=feature&sort=moviemeter,asc&page='+randPage+'&ref_=adv_nxt';
   request(url, function(error, response, html){
@@ -27,12 +29,14 @@ app.get('/scrape', function(req, res){
 	
     
     }
+	
+	    res.send("The genre you chose is: " +genre );
 	//Currently only displays in console
 		console.log(json.title + ' ' + randPage);
-		res.send('Pick My Movie');
+	//	res.send('Pick My Movie');
   })
 })
 
-app.listen('8081')
+app.listen('8080')
 
 exports = module.exports = app;
