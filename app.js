@@ -31,8 +31,8 @@ app.get('/scrape', function(req, res){
 	
     
     }
-	var ntitle = json.title.replace(/\n/g,"<br >");
-	json.title = ntitle;
+//	var ntitle = json.title.replace(/\n/g,"<br >");
+	//json.title = ntitle;
 	   fs.writeFile('views/output.json', JSON.stringify(json, null, 4), function(err){
       console.log('File successfully written! - Check your project directory for the output.json file');
 })
