@@ -13,7 +13,7 @@
 <div class="con">
     <form method='GET' action="/scrape">
 
-            
+            <h1> Select the genre(s) preferred</h1>
  
             <input id="Check1" name="gen" type="checkbox" value="action">
              <label for="Check1">Action</label>
@@ -48,7 +48,15 @@
             <input id="Check12" name="gen" type="checkbox" value="war">
              <label for="Check12">War</label>
           
-	   
+			<div class="range-slider">
+			<br>
+			<input class="input-range" name="year" type="range" value="1990" min="1990" max="2017">
+			<span class="range-value"></span>
+	</div> 
+			<div> 
+               <br>
+                <input class="t" type="text" id="tags" name="tags" placeholder="Keywords (ie magic)" /> 
+            </div> 
         <div class="submit-name">
             <input class="s" type="submit" value="Pick My Movie!" />
         </div>

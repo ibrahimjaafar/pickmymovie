@@ -10,9 +10,14 @@ var app     = express();
 app.get('/scrape', function(req, res){
   var currentIndex = 1;
   var genre = req.query.gen;
+  var tags = req.query.tags;
+  var year = req.query.year;
   var randPage = Math.floor(Math.random() * 20) + 1  ;
    var randMovie = Math.floor(Math.random() * 50) + 1  ;
-  url = 'http://www.imdb.com/search/title?genres='+genre+'&title_type=feature&sort=moviemeter,asc&page='+randPage+'&ref_=adv_nxt';
+  //if tags not empty
+  //url = 'http://www.imdb.com/search/title?release_date='+year+'%2C2017&keywords='+tags+'&genres='+genre+'&title_type=feature&sort=moviemeter,asc&page='+randPage+'&ref_=adv_nxt';
+    url = 'http://www.imdb.com/search/title?release_date='+year+'%2C2017&genres='+genre+'&title_type=feature&sort=moviemeter,asc&page='+randPage+'&ref_=adv_nxt';
+
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html);
@@ -34,7 +39,7 @@ app.get('/scrape', function(req, res){
 //	var ntitle = json.title.replace(/\n/g,"<br >");
 	//json.title = ntitle;
 	   fs.writeFile('views/output.json', JSON.stringify(json, null, 4), function(err){
-      console.log('File successfully written! - Check your project directory for the output.json file');
+      console.log('File successfully written' + url);
 })
 	
 	 res.sendFile(__dirname+"/views/index.html");
