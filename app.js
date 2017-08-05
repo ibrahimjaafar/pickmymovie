@@ -22,15 +22,17 @@ app.get('/scrape', function(req, res){
     if(!error){
       var $ = cheerio.load(html);
 
-      var title, release, rating;
+      var title, rating;
       var json = { title : ""};
 	
       $('.lister-item-content').filter(function(){
         var data = $(this);
      
 	   title = data.eq(-1).text().trim();
+	 
 	  if (randMovie == currentIndex)        
 	  json.title = title;
+	  json.rating = json.title.match(/[0-9]\.[0-9]/);
 	  currentIndex = currentIndex + 1;
       })
 	
