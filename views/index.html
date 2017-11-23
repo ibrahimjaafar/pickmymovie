@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <title>Main menu</title>
 
-<link href="style.css" rel="stylesheet">
-  <script src="movies.js"></script>
+	<link href="style.css" rel="stylesheet">
+	<script src="movies.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 <body>
-<main>
-<div class="con">
+
+<div class="container">
     <form method='GET' action="/scrape">
 
             <h1> Select the genre(s) preferred</h1>
@@ -49,7 +50,7 @@
             <label for="Check12">War</label>
           
 			<div class="range-slider">
-			<br>
+			</br>
 			<input class="input-range" name="year" type="range" value="1990" min="1990" max="2017">
 			<span class="range-value"></span>
 	</div> 
@@ -58,14 +59,15 @@
                 <!--<input class="t" type="text" id="tags" name="tags" placeholder="Keywords (ie magic)" /> -->
             </div> 
         <div class="submit-name">
-            <input class="s" type="submit" value="Pick My Movie!" />
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Pick My Movie!" />
         </div>
 
     </form>
-	</div>
+	<div class="movie">
 	<p id="movie" ></p>
-	</main>
-	
+	<p id="movieRating" ></p>
+	</div>
+	</div>
 	
 </body>
 </html>

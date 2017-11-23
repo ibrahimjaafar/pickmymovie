@@ -1,6 +1,6 @@
 
 {
-  "name"         : "Random Movie Scraper",
+  "name"         : "PickMyMovie",
   "version"      : "0.0.1",
   "description"  : "Random Movie",
   "main"         : "app.js",

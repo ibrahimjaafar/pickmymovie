@@ -1,7 +1,7 @@
 
 window.onload = function () {
-var range = $('.input-range'),
-    value = $('.range-value');
+	var range = $('.input-range'),
+		value = $('.range-value');
     
 value.html(range.attr('value'));
 
@@ -10,5 +10,6 @@ range.on('input', function(){
 }); 
 	$.getJSON("output.json", function (res) {
 	document.getElementById("movie").innerHTML=res.title+"";
+	document.getElementById("movieRating").innerHTML=res.rating+"";
 	});
 }

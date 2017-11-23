@@ -30,9 +30,10 @@ app.get('/scrape', function(req, res){
      
 	   title = data.eq(-1).text().trim();
 	 
-	  if (randMovie == currentIndex)        
-	  json.title = title;
-	  json.rating = json.title.match(/[0-9]\.[0-9]/);
+	  if (randMovie == currentIndex){        
+	  json.title = title.match(/[\w\s',]+\([\d]+\)/g);
+	  json.rating = title.match(/[0-9]\.[0-9]/);
+	  }
 	  currentIndex = currentIndex + 1;
       })
 	
