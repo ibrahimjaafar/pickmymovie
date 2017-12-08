@@ -22,7 +22,7 @@ app.get('/scrape', function(req, res){
     if(!error){
       var $ = cheerio.load(html);
 
-      var title, rating;
+      var title, rating, actors, director, description;
       var json = { title : ""};
 	
       $('.lister-item-content').filter(function(){
@@ -33,6 +33,16 @@ app.get('/scrape', function(req, res){
 	  if (randMovie == currentIndex){        
 	  json.title = title.match(/[\w\s',]+\([\d]+\)/g);
 	  json.rating = title.match(/[0-9]\.[0-9]/);
+	  json.actors = title.match(/Stars:[\s\w,]+[Votes]/g);
+	  if (json.actors !=null)
+	  json.actors = json.actors.toString().replace(/\w+[.!?]?$/, '');
+	  json.director = title.match(/Director:[\s\w]+/g);
+	  json.description = title.match(/Metascore[\s\w.',-]+/g);
+	 
+	  if (json.description != null){
+			json.description = json.description.toString().replace(/\w+[.!?]?$/, '');
+			json.description = json.description.toString().replace(/Metascore/, '');
+	 }
 	  }
 	  currentIndex = currentIndex + 1;
       })
