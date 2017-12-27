@@ -1,23 +1,28 @@
-
+html{
+	  color: #a4973b;
+background-color: #031730;
+}
 body {
   font-family: "PT Sans", sans-serif;
-   font-size: 1.25rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 30px;
-  color: #673;
   margin-top: 100px;
   margin:0;
   padding:0;
-  background: #555;
-  
-}
 
+}
+.body{
+	  color: #a4973b;
+background-color: #031730;
+}
 .container{
 
 	text-align: center;
 	vertical-align: middle;
 	margin-top: 17%;
-	
+	  color: #a4973b;
+background-color: #031730;
 }	
 
 
@@ -32,25 +37,38 @@ input[type="checkbox"] {
 input[type="checkbox"] + label {
 	cursor: pointer;
     padding: .5rem 1rem;
-	border: 1px solid transparent;
-    background: #efefef;
-    color: #aaa;
+	border: 1px solid white;
+    background: #7d6d1a;
+    color: #fff;
     border-radius: 3px;
     text-shadow: 1px 1px 0 rgba(0,0,0,0);
 }
 
 .movie{
 	margin-top: 4rem;
-	font-size: 3.5rem;
+	font-size: 2.5rem;
+	color: azure;
 }
 input[type="checkbox"]:checked + label{
 	
-    background: #777;
-    border: 1px solid #444;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
-    color: white;
+       background: #d8ba15;
+    border: 1px solid white;
+   
+        color: #2f2f2f;
 }   
+input[id="btn-primary"] {
+	color: #fff;
+	
+	background-color: #7d6d1a;
+border-color: #cce7ff;
+}
 
+input[id="btn-primary"]:hover {
+	color: #fff;
 
-
-
+	background-color: #8d8246;
+border-color: #cce7ff;
+}
+.range-value{
+	font-size: 2.5rem;
+}
